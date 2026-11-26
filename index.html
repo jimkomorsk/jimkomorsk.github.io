@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>豆麻传媒视频_豆麻传媒官方视频平台_豆麻传媒原创影像社区</title>
+<meta name="description" content="豆麻传媒视频官方网站，专注原创影像内容与创作者生态，提供高清正版视频、品牌故事、企业动态与社区互动，打造值得信赖的传媒品牌视频门户。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a24'/%3E%3Ccircle cx='26' cy='26' r='9' fill='%23ffb648'/%3E%3Ccircle cx='40' cy='40' r='9' fill='%23ff6b6b'/%3E%3Cpath d='M30 22l14 9-14 9z' fill='%23f4f6fb'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --dm-bg:#10131c;
+    --dm-bg-soft:#171b27;
+    --dm-panel:#1c2130;
+    --dm-line:rgba(255,255,255,.09);
+    --dm-text:#eef1f7;
+    --dm-muted:#9aa3b8;
+    --dm-amber:#ffb648;
+    --dm-coral:#ff6b6b;
+    --dm-mint:#5fe0c0;
+    --dm-head-h:118px;
+    --dm-radius:16px;
+    --dm-max:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--dm-head-h);}
+  body{
+    margin:0;
+    background:var(--dm-bg);
+    color:var(--dm-text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  h1,h2,h3,h4{margin:0;line-height:1.35;}
+  p{margin:0 0 12px;}
+  .dm-wrap{width:100%;max-width:var(--dm-max);margin:0 auto;padding:0 22px;}
+
+  /* ============ sticky header ============ */
+  .dm-sticktop{position:sticky;top:0;z-index:80;}
+  .dm-announce{
+    background:linear-gradient(90deg,#2a2033,#1b2434 60%,#152a2a);
+    border-bottom:1px solid var(--dm-line);
+    font-size:13px;
+    color:#d9dfec;
+  }
+  .dm-announce-inner{
+    display:flex;align-items:center;gap:12px;
+    padding:7px 22px;max-width:var(--dm-max);margin:0 auto;
+    overflow:hidden;
+  }
+  .dm-announce-tag{
+    flex:0 0 auto;background:var(--dm-coral);color:#1a0f10;
+    font-weight:700;font-size:11px;letter-spacing:1px;
+    padding:2px 8px;border-radius:20px;
+  }
+  .dm-announce-list{display:flex;gap:26px;white-space:nowrap;overflow:hidden;}
+  .dm-announce-list b{color:var(--dm-amber);font-weight:600;}
+  .dm-announce-list span{color:var(--dm-muted);}
+
+  .dm-header{
+    background:rgba(16,19,28,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--dm-line);
+  }
+  .dm-header-inner{
+    display:flex;align-items:center;gap:22px;
+    padding:14px 22px;max-width:var(--dm-max);margin:0 auto;
+  }
+  .dm-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+  .dm-logo-mark{
+    width:38px;height:38px;border-radius:11px;
+    background:radial-gradient(circle at 30% 28%,var(--dm-amber),#b8672a 55%,#7a3d2c);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;
+  }
+  .dm-logo-mark svg{width:20px;height:20px;}
+  .dm-logo-text{display:flex;flex-direction:column;line-height:1.2;}
+  .dm-logo-text strong{font-size:17px;letter-spacing:.5px;}
+  .dm-logo-text small{font-size:10px;color:var(--dm-muted);letter-spacing:1.6px;}
+
+  .dm-nav{display:flex;gap:4px;margin-left:6px;flex:1 1 auto;}
+  .dm-nav a{
+    font-size:14px;color:#cfd6e5;padding:7px 12px;border-radius:9px;
+    transition:background .18s,color .18s;
+  }
+  .dm-nav a:hover{background:rgba(255,255,255,.07);color:#fff;}
+
+  .dm-head-tools{display:flex;align-items:center;gap:10px;margin-left:auto;}
+  .dm-search{position:relative;}
+  .dm-search input{
+    width:196px;background:#222839;border:1px solid var(--dm-line);
+    color:var(--dm-text);border-radius:10px;padding:8px 12px 8px 32px;
+    font-size:13px;outline:none;transition:border-color .2s,width .2s;
+  }
+  .dm-search input:focus{border-color:var(--dm-amber);width:230px;}
+  .dm-search .dm-search-ico{
+    position:absolute;left:10px;top:50%;transform:translateY(-50%);
+    width:14px;height:14px;opacity:.6;pointer-events:none;
+  }
+  .dm-search-tip{
+    position:absolute;top:calc(100% + 6px);left:0;right:0;
+    background:#242b3d;border:1px solid var(--dm-line);border-radius:10px;
+    font-size:12px;padding:8px 10px;color:var(--dm-amber);display:none;
+  }
+  .dm-search-tip.is-on{display:block;}
+  .dm-btn-ghost{
+    font-size:13px;padding:8px 14px;border-radius:10px;
+    border:1px solid var(--dm-line);color:#d5dbe9;transition:.2s;
+  }
+  .dm-btn-ghost:hover{border-color:var(--dm-amber);color:var(--dm-amber);}
+  .dm-burger{display:none;width:38px;height:36px;border-radius:9px;border:1px solid var(--dm-line);}
+  .dm-burger span{display:block;width:16px;height:2px;background:#d5dbe9;margin:3.5px auto;transition:.2s;}
+
+  /* ============ hero: left text / right big visual + data bar ============ */
+  .dm-hero{padding:56px 0 20px;position:relative;overflow:hidden;}
+  .dm-hero::before{
+    content:"";position:absolute;inset:-140px -10% auto auto;width:620px;height:620px;
+    background:radial-gradient(circle,rgba(255,182,72,.16),transparent 62%);
+    pointer-events:none;
+  }
+  .dm-hero-grid{
+    display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+    gap:44px;align-items:center;position:relative;
+  }
+  .dm-hero-kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;
+    color:var(--dm-amber);border:1px solid rgba(255,182,72,.4);
+    padding:5px 12px;border-radius:30px;margin-bottom:20px;
+  }
+  .dm-hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--dm-mint);}
+  .dm-hero h1{
+    font-size:clamp(32px,4.4vw,54px);font-weight:800;letter-spacing:-1px;
+    background:linear-gradient(92deg,#fff 12%,#ffd79a 68%,var(--dm-coral));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:18px;
+  }
+  .dm-hero-lead{font-size:16px;color:#c6cddd;max-width:34em;margin-bottom:14px;}
+  .dm-hero-desc{font-size:14px;color:var(--dm-muted);max-width:36em;}
+  .dm-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .dm-btn-primary{
+    background:linear-gradient(180deg,var(--dm-amber),#e8952b);
+    color:#231708;font-weight:700;font-size:14px;
+    padding:11px 22px;border-radius:11px;
+    box-shadow:0 8px 22px -10px rgba(255,182,72,.8);transition:.2s;
+  }
+  .dm-btn-primary:hover{transform:translateY(-2px);}
+  .dm-btn-outline{
+    border:1px solid rgba(255,255,255,.22);color:#e7ebf4;font-size:14px;
+    padding:11px 20px;border-radius:11px;transition:.2s;
+  }
+  .dm-btn-outline:hover{border-color:var(--dm-mint);color:var(--dm-mint);}
+
+  .dm-hero-visual{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--dm-line);box-shadow:0 40px 70px -46px #000;}
+  .dm-hero-visual svg{display:block;width:100%;height:auto;}
+  .dm-hero-badge{
+    position:absolute;left:16px;bottom:16px;background:rgba(11,14,21,.72);
+    border:1px solid var(--dm-line);backdrop-filter:blur(6px);
+    border-radius:12px;padding:9px 14px;font-size:12px;color:#dfe4ef;
+    display:flex;align-items:center;gap:9px;
+  }
+  .dm-hero-badge b{color:var(--dm-mint);font-weight:700;}
+
+  .dm-statbar{
+    margin-top:44px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.5fr);
+    gap:1px;background:var(--dm-line);border:1px solid var(--dm-line);border-radius:14px;overflow:hidden;
+  }
+  .dm-statbar > div{background:var(--dm-bg-soft);padding:18px 20px;}
+  .dm-statbar strong{display:block;font-size:26px;font-weight:800;color:var(--dm-amber);letter-spacing:-.5px;}
+  .dm-statbar span{font-size:12px;color:var(--dm-muted);}
+  .dm-statbar-note{font-size:13px;color:#c3cadb;display:flex;align-items:center;gap:10px;}
+  .dm-statbar-note em{color:var(--dm-mint);font-style:normal;font-weight:600;}
+
+  /* ============ section common ============ */
+  .dm-section{padding:66px 0;border-top:1px solid var(--dm-line);}
+  .dm-sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:34px;}
+  .dm-sec-head h2{
+    font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.4px;
+  }
+  .dm-sec-head h2 em{font-style:normal;color:var(--dm-amber);}
+  .dm-sec-head p{font-size:13.5px;color:var(--dm-muted);max-width:44em;margin:8px 0 0;}
+  .dm-sec-index{
+    font-size:12px;letter-spacing:2px;color:var(--dm-coral);
+    border:1px solid rgba(255,107,107,.35);padding:3px 10px;border-radius:20px;flex:0 0 auto;
+  }
+  .dm-tag{
+    display:inline-block;font-size:11.5px;color:#a9b2c7;
+    background:rgba(255,255,255,.06);border:1px solid var(--dm-line);
+    padding:2px 9px;border-radius:20px;
+  }
+
+  /* ============ analysis / keyword deep-dive ============ */
+  .dm-analysis-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:40px;align-items:start;}
+  .dm-analysis h3{font-size:18px;margin:26px 0 10px;color:#fff;}
+  .dm-analysis h3:first-child{margin-top:0;}
+  .dm-analysis h3::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--dm-amber);margin-right:9px;transform:translateY(-3px);}
+  .dm-analysis p{font-size:14.5px;color:#c3cadb;text-indent:0;}
+  .dm-analysis strong{color:var(--dm-amber);font-weight:600;}
+  .dm-analysis-aside{
+    background:linear-gradient(180deg,#1b2130,#151a26);
+    border:1px solid var(--dm-line);border-radius:var(--dm-radius);padding:22px;
+  }
+  .dm-analysis-aside h4{font-size:14px;color:var(--dm-mint);letter-spacing:1px;margin-bottom:14px;}
+  .dm-kv{display:flex;justify-content:space-between;gap:14px;font-size:13px;padding:9px 0;border-bottom:1px dashed var(--dm-line);color:#b6bfd2;}
+  .dm-kv:last-of-type{border-bottom:none;}
+  .dm-kv b{color:#fff;font-weight:600;}
+  .dm-analysis-aside .dm-note{font-size:12px;color:var(--dm-muted);margin-top:14px;line-height:1.7;}
+
+  /* ============ featured focus ============ */
+  .dm-focus-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:26px;align-items:stretch;}
+  .dm-focus-main{
+    background:var(--dm-panel);border:1px solid var(--dm-line);
+    border-radius:var(--dm-radius);overflow:hidden;transition:.25s;
+  }
+  .dm-focus-main:hover{transform:translateY(-4px);border-color:rgba(255,182,72,.45);}
+  .dm-focus-main svg{width:100%;height:auto;aspect-ratio:16/9;}
+  .dm-focus-body{padding:20px 22px 22px;}
+  .dm-focus-body h3{font-size:20px;margin-bottom:9px;}
+  .dm-focus-body p{font-size:13.5px;color:var(--dm-muted);}
+  .dm-focus-list{display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .dm-mini{
+    display:flex;gap:14px;background:var(--dm-bg-soft);border:1px solid var(--dm-line);
+    border-radius:13px;padding:13px;transition:.22s;min-width:0;
+  }
+  .dm-mini:hover{border-color:rgba(95,224,192,.4);background:#1d2331;}
+  .dm-mini-art{flex:0 0 96px;border-radius:9px;overflow:hidden;}
+  .dm-mini-art svg{width:100%;height:100%;aspect-ratio:1/1;}
+  .dm-mini-txt{min-width:0;}
+  .dm-mini-txt h4{font-size:14.5px;margin-bottom:5px;}
+  .dm-mini-txt p{font-size:12.5px;color:var(--dm-muted);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+  /* ============ video stream (single-column list) ============ */
+  .dm-vlist{display:flex;flex-direction:column;gap:16px;}
+  .dm-vitem{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
+    background:var(--dm-bg-soft);border:1px solid var(--dm-line);
+    border-radius:14px;padding:18px 20px;transition:.22s;
+  }
+  .dm-vitem:hover{border-color:rgba(255,182,72,.42);transform:translateX(3px);}
+  .dm-vitem-main{min-width:0;}
+  .dm-vitem-main h3{font-size:16.5px;margin-bottom:7px;}
+  .dm-vitem-main p{font-size:13.5px;color:var(--dm-muted);margin:0 0 10px;max-width:60em;}
+  .dm-vmeta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:12px;color:#8f9ab0;}
+  .dm-vmeta .dm-author{color:var(--dm-mint);}
+  .dm-vactions{display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex:0 0 auto;}
+  .dm-act-row{display:flex;gap:8px;}
+  .dm-btn-like,.dm-btn-fav{
+    font-size:12.5px;padding:6px 12px;border-radius:9px;
+    border:1px solid var(--dm-line);color:#cdd4e3;transition:.18s;white-space:nowrap;
+  }
+  .dm-btn-like:hover{border-color:var(--dm-amber);color:var(--dm-amber);}
+  .dm-btn-like.is-liked{background:rgba(255,182,72,.14);border-color:var(--dm-amber);color:var(--dm-amber);}
+  .dm-btn-fav:hover{border-color:var(--dm-coral);color:var(--dm-coral);}
+  .dm-btn-fav.is-faved{background:rgba(255,107,107,.15);border-color:var(--dm-coral);color:var(--dm-coral);}
+
+  /* ============ topics ============ */
+  .dm-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .dm-topic{
+    background:var(--dm-panel);border:1px solid var(--dm-line);border-radius:var(--dm-radius);
+    padding:22px;display:flex;flex-direction:column;gap:12px;transition:.24s;min-width:0;
+  }
+  .dm-topic:hover{transform:translateY(-4px);border-color:rgba(95,224,192,.4);}
+  .dm-topic-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .dm-topic h3{font-size:17px;}
+  .dm-status{font-size:11px;padding:2px 9px;border-radius:20px;background:rgba(95,224,192,.13);color:var(--dm-mint);white-space:nowrap;}
+  .dm-topic p{font-size:13px;color:var(--dm-muted);margin:0;}
+  .dm-topic ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .dm-topic ul li{font-size:13px;color:#c4cbdb;padding-left:15px;position:relative;}
+  .dm-topic ul li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--dm-coral);}
+  .dm-topic > svg{width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;}
+
+  /* ============ authors ============ */
+  .dm-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .dm-author{
+    display:flex;gap:16px;background:var(--dm-bg-soft);border:1px solid var(--dm-line);
+    border-radius:var(--dm-radius);padding:20px;transition:.22s;min-width:0;
+  }
+  .dm-author:hover{border-color:rgba(255,182,72,.4);}
+  .dm-avatar{
+    flex:0 0 62px;width:62px;height:62px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;font-weight:800;color:#12151d;
+  }
+  .dm-author-body{min-width:0;}
+  .dm-author-body h3{font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .dm-author-body h3 .dm-tag{font-weight:400;}
+  .dm-author-nums{display:flex;gap:16px;font-size:12px;color:#8f9ab0;margin:6px 0 8px;}
+  .dm-author-nums b{color:var(--dm-amber);font-weight:700;}
+  .dm-author-body p{font-size:13px;color:var(--dm-muted);margin:0;}
+  .dm-author-more{
+    margin-top:10px;font-size:12.5px;color:var(--dm-mint);
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .dm-author-more:hover{text-decoration:underline;}
+
+  /* ============ comments (two-column) ============ */
+  .dm-cmt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+  .dm-cmt{
+    background:var(--dm-panel);border:1px solid var(--dm-line);border-radius:14px;
+    padding:18px 20px;min-width:0;
+  }
+  .dm-cmt-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .dm-cmt-dot{
+    width:32px;height:32px;border-radius:50%;flex:0 0 32px;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#12151d;
+  }
+  .dm-cmt-head strong{font-size:13.5px;}
+  .dm-cmt-head span{font-size:11.5px;color:#8a94a9;margin-left:auto;white-space:nowrap;}
+  .dm-cmt p{font-size:13.5px;color:#c6cddd;margin:0;}
+  .dm-cmt-quote{
+    background:linear-gradient(180deg,#1f2434,#191e2b);border-left:3px solid var(--dm-coral);
+  }
+
+  /* ============ timeline / updates ============ */
+  .dm-timeline{position:relative;display:flex;flex-direction:column;gap:0;}
+  .dm-tl-item{
+    display:grid;grid-template-columns:120px minmax(0,1fr);gap:22px;
+    padding:18px 0;border-bottom:1px dashed var(--dm-line);
+  }
+  .dm-tl-item:last-child{border-bottom:none;}
+  .dm-tl-date{font-size:13px;color:var(--dm-amber);font-weight:600;letter-spacing:.5px;}
+  .dm-tl-item h3{font-size:15.5px;margin-bottom:5px;}
+  .dm-tl-item p{font-size:13px;color:var(--dm-muted);margin:0;}
+
+  /* ============ partners ============ */
+  .dm-partner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;}
+  .dm-partner{
+    border:1px solid var(--dm-line);border-radius:12px;padding:20px 16px;
+    text-align:center;font-size:13.5px;color:#c3cadb;background:var(--dm-bg-soft);
+    transition:.22s;
+  }
+  .dm-partner:hover{border-color:rgba(255,182,72,.4);color:var(--dm-amber);}
+  .dm-partner b{display:block;font-size:15px;color:#fff;margin-bottom:4px;}
+  .dm-partner span{font-size:11.5px;color:var(--dm-muted);}
+
+  /* ============ FAQ ============ */
+  .dm-faq{display:flex;flex-direction:column;gap:12px;}
+  .dm-faq details{
+    background:var(--dm-bg-soft);border:1px solid var(--dm-line);border-radius:12px;
+    padding:0 18px;transition:.2s;
+  }
+  .dm-faq details[open]{border-color:rgba(95,224,192,.4);background:#1d2331;}
+  .dm-faq summary{
+    cursor:pointer;list-style:none;padding:15px 0;font-size:14.5px;font-weight:600;
+    display:flex;justify-content:space-between;gap:14px;align-items:center;
+  }
+  .dm-faq summary::-webkit-details-marker{display:none;}
+  .dm-faq summary::after{content:"+";color:var(--dm-amber);font-size:18px;line-height:1;}
+  .dm-faq details[open] summary::after{content:"–";}
+  .dm-faq p{font-size:13.5px;color:var(--dm-muted);padding-bottom:15px;margin:0;}
+
+  /* ============ footer ============ */
+  .dm-footer{border-top:1px solid var(--dm-line);background:#0b0e15;padding:52px 0 26px;}
+  .dm-footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:32px;margin-bottom:36px;}
+  .dm-footer h4{font-size:13.5px;color:#fff;margin-bottom:14px;letter-spacing:.5px;}
+  .dm-footer p{font-size:13px;color:var(--dm-muted);max-width:32em;}
+  .dm-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .dm-footer ul li{font-size:13px;color:#9aa3b8;}
+  .dm-footer ul a:hover{color:var(--dm-amber);}
+  .dm-footer-bottom{
+    border-top:1px solid var(--dm-line);padding-top:20px;
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+    font-size:12px;color:#78829a;
+  }
+  .dm-footer-share{display:flex;gap:10px;margin-top:16px;}
+  .dm-footer-share button{
+    font-size:12px;padding:6px 12px;border-radius:8px;
+    border:1px solid var(--dm-line);color:#c3cadb;transition:.2s;
+  }
+  .dm-footer-share button:hover{border-color:var(--dm-mint);color:var(--dm-mint);}
+
+  /* ============ toast & modal & top ============ */
+  .dm-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:#2a3145;border:1px solid rgba(255,182,72,.45);color:#ffe3b3;
+    padding:10px 20px;border-radius:12px;font-size:13.5px;z-index:200;
+    opacity:0;pointer-events:none;transition:.28s;
+    box-shadow:0 18px 40px -18px #000;
+  }
+  .dm-toast.is-on{opacity:1;transform:translate(-50%,0);}
+  .dm-modal{
+    position:fixed;inset:0;background:rgba(7,9,14,.72);backdrop-filter:blur(4px);
+    display:none;align-items:center;justify-content:center;padding:22px;z-index:180;
+  }
+  .dm-modal.is-on{display:flex;}
+  .dm-modal-card{
+    background:#1a2030;border:1px solid var(--dm-line);border-radius:18px;
+    width:100%;max-width:460px;padding:26px;position:relative;
+  }
+  .dm-modal-card h3{font-size:18px;margin-bottom:10px;}
+  .dm-modal-card p{font-size:13.5px;color:var(--dm-muted);}
+  .dm-modal-close{
+    position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:8px;
+    border:1px solid var(--dm-line);color:#c3cadb;font-size:15px;line-height:1;
+  }
+  .dm-modal-close:hover{border-color:var(--dm-coral);color:var(--dm-coral);}
+  .dm-modal-card textarea{
+    width:100%;min-height:100px;background:#141926;border:1px solid var(--dm-line);
+    border-radius:10px;color:var(--dm-text);padding:11px;font-size:13.5px;resize:vertical;
+    outline:none;font-family:inherit;
+  }
+  .dm-modal-card textarea:focus{border-color:var(--dm-amber);}
+  .dm-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:14px;}
+  .dm-top{
+    position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:12px;
+    background:#242b3d;border:1px solid var(--dm-line);color:var(--dm-amber);
+    font-size:18px;display:none;align-items:center;justify-content:center;z-index:120;
+    box-shadow:0 14px 30px -16px #000;
+  }
+  .dm-top.is-on{display:flex;}
+  .dm-top:hover{border-color:var(--dm-amber);}
+
+  /* ============ responsive ============ */
+  @media (max-width:1000px){
+    .dm-hero-grid{grid-template-columns:1fr;}
+    .dm-statbar{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .dm-statbar-note{grid-column:1 / -1;}
+    .dm-analysis-grid{grid-template-columns:1fr;}
+    .dm-focus-grid{grid-template-columns:1fr;}
+    .dm-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .dm-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .dm-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:860px){
+    :root{--dm-head-h:104px;}
+    .dm-nav{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:#141926;border-bottom:1px solid var(--dm-line);
+      flex-direction:column;padding:12px 22px 18px;gap:2px;
+    }
+    .dm-nav.is-open{display:flex;}
+    .dm-nav a{padding:11px 10px;}
+    .dm-header-inner{position:relative;flex-wrap:wrap;gap:12px;}
+    .dm-burger{display:block;}
+    .dm-search input{width:150px;}
+    .dm-search input:focus{width:170px;}
+    .dm-author-grid,.dm-cmt-grid{grid-template-columns:1fr;}
+    .dm-vitem{grid-template-columns:1fr;}
+    .dm-vactions{align-items:flex-start;flex-direction:row;justify-content:flex-start;}
+    .dm-tl-item{grid-template-columns:1fr;gap:6px;}
+    .dm-announce-list{overflow-x:auto;scrollbar-width:none;}
+  }
+  @media (max-width:560px){
+    .dm-statbar{grid-template-columns:1fr;}
+    .dm-topic-grid{grid-template-columns:1fr;}
+    .dm-footer-grid{grid-template-columns:1fr;}
+    .dm-partner-grid{grid-template-columns:1fr;}
+    .dm-section{padding:48px 0;}
+    .dm-wrap,.dm-header-inner,.dm-announce-inner{padding-left:16px;padding-right:16px;}
+  }
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- ===== S1 公告条 + 页头 ===== -->
+<div class="dm-sticktop">
+  <div class="dm-announce">
+    <div class="dm-announce-inner">
+      <span class="dm-announce-tag">官方发布</span>
+      <div class="dm-announce-list">
+        <span><b>11-20</b> 《豆麻影像年刊 2026》专题上线，收录 38 部原创短片</span>
+        <span><b>11-18</b> 创作者扶持计划第二期开放报名，新增 4 个垂类赛道</span>
+        <span><b>11-15</b> 客户端 4.2 版本更新：支持 4K 高清离线下载</span>
+      </div>
+    </div>
+  </div>
+  <header class="dm-header">
+    <div class="dm-header-inner">
+      <a class="dm-logo" href="#dm-top-anchor" aria-label="豆麻传媒视频官方网站首页">
+        <span class="dm-logo-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l11 6-11 6z" fill="#161a24"/><circle cx="6" cy="7" r="2" fill="#161a24"/></svg>
+        </span>
+        <span class="dm-logo-text"><strong>豆麻传媒视频</strong><small>DOUMA MEDIA VIDEO</small></span>
+      </a>
+      <nav class="dm-nav" id="dmNav" aria-label="主导航">
+        <a href="#dm-about">品牌简介</a>
+        <a href="#dm-analysis">关键词解析</a>
+        <a href="#dm-focus">焦点内容</a>
+        <a href="#dm-videos">视频社区</a>
+        <a href="#dm-topics">专题企划</a>
+        <a href="#dm-authors">创作者</a>
+        <a href="#dm-voices">用户口碑</a>
+        <a href="#dm-updates">企业动态</a>
+        <a href="#dm-faq">常见问题</a>
+      </nav>
+      <div class="dm-head-tools">
+        <div class="dm-search">
+          <svg class="dm-search-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9aa3b8" stroke-width="2" fill="none"/><path d="M16.5 16.5L21 21" stroke="#9aa3b8" stroke-width="2"/></svg>
+          <input type="search" id="dmSearch" placeholder="搜索影片 / 创作者 / 专题" aria-label="站内搜索">
+          <div class="dm-search-tip" id="dmSearchTip"></div>
+        </div>
+        <button class="dm-btn-ghost" id="dmSubmitBtn" type="button">投稿合作</button>
+        <button class="dm-burger" id="dmBurger" type="button" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ===== S2 品牌首屏 ===== -->
+<main id="dm-top-anchor">
+<section class="dm-hero dm-section" style="border-top:none" id="dm-about">
+  <div class="dm-wrap">
+    <div class="dm-hero-grid">
+      <div>
+        <span class="dm-hero-kicker"><i></i>豆麻传媒视频 · 官方网站</span>
+        <h1>豆麻传媒视频</h1>
+        <p class="dm-hero-lead">以原创影像记录真实生活，用持续运营的内容生态连接创作者与观众——豆麻传媒视频品牌官网，承载每一部值得被看见的作品。</p>
+        <p class="dm-hero-desc">作为深耕原创视频领域的传媒企业，豆麻传媒视频为品牌、创作者与社区用户搭建高清正版的影像平台，提供专题企划、创作者扶持、企业动态与互动社区等多元服务，致力于成为用户首选的品质视频内容入口。</p>
+        <div class="dm-hero-actions">
+          <a class="dm-btn-primary" href="#dm-videos">浏览精品内容</a>
+          <a class="dm-btn-outline" href="#dm-topics">查看专题企划</a>
+          <a class="dm-btn-outline" href="#dm-authors">认识创作者</a>
+        </div>
+      </div>
+      <div class="dm-hero-visual">
+        <svg viewBox="0 0 640 460" role="img" aria-label="豆麻传媒视频品牌主视觉：夜色城市中的影像放映厅与播放光轨">
+          <defs>
+            <linearGradient id="dmHeroSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1b2233"/><stop offset="1" stop-color="#0e1320"/>
+            </linearGradient>
+            <linearGradient id="dmHeroGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffb648"/><stop offset="1" stop-color="#ff6b6b"/>
+            </linearGradient>
+            <linearGradient id="dmHeroScreen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5fe0c0" stop-opacity=".85"/><stop offset="1" stop-color="#3a7bd5" stop-opacity=".55"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="460" fill="url(#dmHeroSky)"/>
+          <g opacity=".55">
+            <rect x="40" y="230" width="58" height="150" fill="#161d2b"/>
+            <rect x="110" y="188" width="46" height="192" fill="#131927"/>
+            <rect x="168" y="252" width="66" height="128" fill="#161d2b"/>
+            <rect x="490" y="204" width="52" height="176" fill="#131927"/>
+            <rect x="554" y="244" width="60" height="136" fill="#161d2b"/>
+          </g>
+          <g opacity=".8">
+            <circle cx="90" cy="256" r="3" fill="#ffb648"/><circle cx="130" cy="212" r="3" fill="#5fe0c0"/>
+            <circle cx="196" cy="286" r="3" fill="#ff6b6b"/><circle cx="516" cy="228" r="3" fill="#ffb648"/>
+            <circle cx="582" cy="272" r="3" fill="#5fe0c0"/>
+          </g>
+          <rect x="150" y="96" width="340" height="196" rx="14" fill="#0c1019" stroke="#2b3448"/>
+          <rect x="164" y="110" width="312" height="168" rx="8" fill="url(#dmHeroScreen)"/>
+          <g>
+            <path d="M296 168l58 32-58 32z" fill="#0f1420" opacity=".85"/>
+            <circle cx="222" cy="146" r="17" fill="#0f1420" opacity=".32"/>
+            <circle cx="412" cy="228" r="26" fill="#0f1420" opacity=".24"/>
+            <path d="M180 250c40-26 70-26 110 0s70 26 110 0" stroke="#0f1420" stroke-width="4" fill="none" opacity=".3"/>
+          </g>
+          <rect x="150" y="292" width="340" height="10" rx="5" fill="#222b3d"/>
+          <rect x="150" y="292" width="212" height="10" rx="5" fill="url(#dmHeroGlow)"/>
+          <g>
+            <circle cx="320" cy="356" r="30" fill="none" stroke="url(#dmHeroGlow)" stroke-width="2" opacity=".8"/>
+            <circle cx="320" cy="356" r="44" fill="none" stroke="#5fe0c0" stroke-width="1" opacity=".38"/>
+            <path d="M308 344l26 12-26 12z" fill="#ffb648"/>
+          </g>
+          <path d="M0 412c90-28 160-28 250 0s150 28 240 0 120-18 150-8v66H0z" fill="#0b0f18"/>
+        </svg>
+        <div class="dm-hero-badge"><b>本周热映</b>《豆麻城市影像志 · 第六集》</div>
+      </div>
+    </div>
+
+    <div class="dm-statbar">
+      <div><strong>1260<span style="font-size:15px;">+</span></strong><span>累计上线原创短片</span></div>
+      <div><strong>3.8<span style="font-size:15px;">亿</span></strong><span>全平台累计播放量</span></div>
+      <div><strong>420<span style="font-size:15px;">位</span></strong><span>签约与入驻创作者</span></div>
+      <div class="dm-statbar-note">平台持续运营第 7 年，坚持<em>高清正版</em>标准与<em>原创优先</em>机制，每月固定更新 3 期专题企划，企业动态与官方发布同步公开。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S3 关键词解析（不少于800字） ===== -->
+<section class="dm-section" id="dm-analysis">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>读懂<em>豆麻传媒视频</em>：一个传媒品牌的影像方法论</h2>
+        <p>关键词解析 · 从品牌定位、内容生态到社区运营，完整拆解豆麻传媒视频官方网站背后的创作逻辑与品质标准。</p>
+      </div>
+      <span class="dm-sec-index">KEYWORD 01</span>
+    </div>
+    <div class="dm-analysis-grid">
+      <div class="dm-analysis">
+        <h3>一、豆麻传媒视频是什么：从传媒企业到视频品牌官网</h3>
+        <p>豆麻传媒视频并不是一个单纯的内容搬运频道，而是一家以原创影像为核心业务的传媒企业所构建的品牌视频门户。打开豆麻传媒视频官方网站，你会先看到品牌定位，再看到内容——这个顺序是刻意的。因为我们相信，一个持续运营的视频品牌，首先要回答“我们为什么拍”，然后才是“我们拍了什么”。豆麻传媒视频自成立起就把“真实、温暖、有力量”作为影像判断标准，把社区共创作为内容来源，把高清正版作为技术底线。官网在这里承担的职能不只是展示作品，更是公开我们的创作标准、创作者机制、企业动态与合作方式，让每一位来访者都能判断这个品牌是否值得信赖。</p>
+        <p>在豆麻传媒视频的体系里，一部片子的生命周期远不止上线那一天。前期有选题会与实地勘景，中期有拍摄与剪辑的多轮审片，后期有字幕、封面、标签、专题归档，上线后还有评论区的持续互动与二次创作引导。这条链路被我们写进官网的关键词解析板块，是因为很多用户好奇：为什么同样题材，豆麻传媒视频的作品看起来更“稳”？答案并不神秘，它来自流程的稳定与标准的统一。</p>
+
+        <h3>二、内容生态：原创优先、垂直深耕与品质控制</h3>
+        <p>豆麻传媒视频的内容生态由三条线构成。第一条是<strong>原创自制</strong>，包括城市影像志、人物访谈、生活方式纪录等长线企划，由品牌内部制作团队完成，强调叙事完整与影像质感。第二条是<strong>创作者共创</strong>，通过创作者扶持计划引入外部力量，平台提供选题指导、拍摄设备支持与后期协助，创作者保留署名与分成。第三条是<strong>社区投稿</strong>，面向普通用户开放，鼓励日常记录与兴趣分享，让内容生态保持活水。三条线共享同一套审核标准：画面清晰度、音画同步、版权来源、信息真实性，缺一不可。</p>
+        <p>垂直深耕是豆麻传媒视频最常被提到的关键词之一。我们不追求全品类覆盖，而是围绕城市、人物、生活三个方向做深。比如城市方向，我们连续三年拍摄同一批街区的四季变化；人物方向，我们跟踪记录手艺人的日常工作节奏；生活方向，我们关注普通家庭的一日三餐。这种“慢”带来了口碑，也让品牌在垂直领域积累了可被检索、可被引用的内容资产。用户搜索豆麻传媒视频时，往往不是找某一支爆款，而是找一种稳定的观看体验——这恰恰是品质内容的价值。</p>
+
+        <h3>三、社区与创作者：让互动成为内容的一部分</h3>
+        <p>豆麻传媒视频的社区不是附属品，而是内容生产的延伸。官网上的评论区、创作者档案、专题投票、投稿入口，共同构成一个可参与的结构。观众可以在视频条目下点赞、收藏、复制链接分享给朋友；可以在创作者主页了解对方的擅长领域与作品数量；也可以在专题页参与下一期选题的投票。我们观察到，一次有效的互动往往能带来更长尾的观看——当观众在评论区看到创作者解释某个镜头的拍摄原因，他对这支片子的信任度会明显提高。因此豆麻传媒视频把“回应”写进了运营规范：重点内容上线 24 小时内，创作团队需要在评论区完成至少一轮答疑。</p>
+        <p>创作者扶持计划是社区活力的另一根支柱。计划按季度招募，覆盖纪录片、生活记录、手工技艺、城市探索等赛道，入选者可以获得拍摄补贴、设备借用、剪辑指导与官方推荐位。更重要的是，我们为创作者建立了清晰的成长路径：从社区投稿者，到签约创作者，再到专题主理人。每一步都有对应的作品要求与权益说明，全部公开在官网上。这种透明度让豆麻传媒视频在创作者群体中形成了“值得信赖”的印象，也让内容生态具备了自我更新的能力。</p>
+
+        <h3>四、品牌责任与长期主义：为什么官网要写这么多</h3>
+        <p>有人会问，一个视频品牌的官网为什么要写这么多文字？因为豆麻传媒视频把自己定位为“可被检验的品牌”。我们公开企业简介，是为了让合作方了解团队构成与业务边界；我们公开企业动态与更新日志，是为了让用户知道平台在持续运营而不是短期投机；我们公开 FAQ 与投稿规则，是为了减少沟通成本、保护创作者权益。社会责任也在这个框架内：我们为本地文化机构提供免费影像记录支持，为学校影像社团开放素材库，为公益项目提供传播方案。这些内容不会带来直接流量，但它们构成了品牌故事中最坚实的部分。</p>
+        <p>长期主义听上去抽象，落到豆麻传媒视频的日常就是三件小事：不删旧片、不篡改数据、不拖欠分成。旧片是品牌的年轮，哪怕早期作品画质有限，我们依然保留并标注拍摄年份；数据公开透明，播放量、点赞数、收藏数按真实统计展示；分成按合同周期结算，创作者可在后台查看明细。这些做法并不新鲜，但坚持七年并不容易。也正因为如此，豆麻传媒视频才敢在官网首页写下“用户首选”与“行业领先”这样的词——它们不是口号，而是被一条条规则支撑起来的结果。</p>
+        <p>最后回到关键词本身。豆麻传媒视频这六个字，拆开看是品牌名、业务属性与内容形态的组合；合起来看，它是一个关于“如何认真做影像”的长期答案。无论你是第一次访问官网的观众，还是准备投稿的创作者，或是在寻找内容合作的品牌方，我们希望这个页面能让你快速判断：这里的作品是否值得看，这里的规则是否值得信，这里的社区是否值得留下。</p>
+      </div>
+      <aside class="dm-analysis-aside">
+        <h4>品牌档案 · BRAND FILE</h4>
+        <div class="dm-kv"><span>品牌全称</span><b>豆麻传媒视频</b></div>
+        <div class="dm-kv"><span>业务属性</span><b>原创影像 · 传媒</b></div>
+        <div class="dm-kv"><span>内容方向</span><b>城市 / 人物 / 生活</b></div>
+        <div class="dm-kv"><span>技术标准</span><b>高清正版 4K</b></div>
+        <div class="dm-kv"><span>更新节奏</span><b>每周三更</b></div>
+        <div class="dm-kv"><span>创作者规模</span><b>420 位</b></div>
+        <div class="dm-kv"><span>运营年限</span><b>7 年</b></div>
+        <p class="dm-note">本档案由豆麻传媒视频品牌中心维护，随企业动态同步更新。如需引用，请注明来源为豆麻传媒视频官方网站。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S4 焦点内容 ===== -->
+<section class="dm-section" id="dm-focus">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>本周焦点 · <em>豆麻传媒视频</em>编辑部推荐</h2>
+        <p>由内容中心与社区共同选出的 4 部重点作品，覆盖城市纪录、人物访谈与生活观察，全部为平台原创或官方联合出品。</p>
+      </div>
+      <span class="dm-sec-index">FOCUS 02</span>
+    </div>
+
+    <div class="dm-focus-grid">
+      <article class="dm-focus-main">
+        <svg viewBox="0 0 720 405" role="img" aria-label="焦点影片《凌晨四点的豆麻街》封面：清晨街道与早点摊的暖色灯光">
+          <defs>
+            <linearGradient id="dmF1Sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#241c2e"/><stop offset=".6" stop-color="#3a2a35"/><stop offset="1" stop-color="#5a3a34"/>
+            </linearGradient>
+            <linearGradient id="dmF1Lamp" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffd79a"/><stop offset="1" stop-color="#ff9d3b"/>
+            </linearGradient>
+          </defs>
+          <rect width="720" height="405" fill="url(#dmF1Sky)"/>
+          <g opacity=".5">
+            <rect x="40" y="150" width="90" height="255" fill="#1d1723"/>
+            <rect x="150" y="196" width="70" height="209" fill="#221a27"/>
+            <rect x="520" y="170" width="80" height="235" fill="#1d1723"/>
+            <rect x="612" y="220" width="70" height="185" fill="#221a27"/>
+          </g>
+          <g>
+            <ellipse cx="370" cy="352" rx="200" ry="26" fill="#0f0b12" opacity=".55"/>
+            <rect x="252" y="238" width="240" height="110" rx="8" fill="#2c2230"/>
+            <rect x="252" y="220" width="240" height="22" rx="6" fill="url(#dmF1Lamp)"/>
+            <rect x="278" y="268" width="86" height="52" rx="5" fill="#ffcf8a" opacity=".85"/>
+            <rect x="382" y="268" width="86" height="52" rx="5" fill="#ffb648" opacity=".65"/>
+            <circle cx="330" cy="346" r="7" fill="#ffe3b3"/>
+            <circle cx="412" cy="346" r="7" fill="#ffe3b3"/>
+          </g>
+          <g>
+            <path d="M186 250c0-22 18-38 40-38s40 16 40 38" fill="#0f0b12" opacity=".5"/>
+            <rect x="176" y="250" width="100" height="7" rx="3" fill="#ffb648" opacity=".7"/>
+          </g>
+          <g opacity=".9">
+            <circle cx="360" cy="120" r="34" fill="#ffcf8a" opacity=".12"/>
+            <circle cx="360" cy="120" r="22" fill="#ffcf8a" opacity=".22"/>
+          </g>
+          <text x="40" y="66" fill="#ffe3b3" font-size="17" font-family="sans-serif" letter-spacing="3">DOUMA ORIGINAL</text>
+          <text x="40" y="98" fill="#ffffff" font-size="26" font-family="sans-serif" font-weight="bold">凌晨四点的豆麻街</text>
+        </svg>
+        <div class="dm-focus-body">
+          <span class="dm-tag">城市纪录</span> <span class="dm-tag">官方出品</span>
+          <h3>凌晨四点的豆麻街：一座城市最早的呼吸</h3>
+          <p>历时 9 个月跟拍，记录凌晨四点开始运转的街区——早点摊、清洁队、货运司机、通宵值班的店员。镜头不急着给结论，只把时间交给街道本身，让观众听见城市最早的呼吸声。</p>
+          <div class="dm-vmeta">
+            <span class="dm-author">豆麻纪录组</span>
+            <span>42.6 万播放</span><span>1.8 万点赞</span><span>12 分钟</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="dm-focus-list">
+        <article class="dm-mini">
+          <div class="dm-mini-art">
+            <svg viewBox="0 0 100 100" role="img" aria-label="影片《剪刀与丝线：旗袍手艺人的一天》缩略图：缝纫工作台与尺子">
+              <rect width="100" height="100" fill="#2a2f22"/>
+              <rect x="16" y="56" width="68" height="26" rx="4" fill="#4a4131"/>
+              <rect x="24" y="34" width="12" height="26" rx="3" fill="#c9b48a"/>
+              <path d="M46 30l16 40" stroke="#e7d7b3" stroke-width="3"/>
+              <circle cx="70" cy="38" r="9" fill="none" stroke="#ffb648" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="dm-mini-txt">
+            <h4>剪刀与丝线：旗袍手艺人的一天</h4>
+            <p>从量体到盘扣，76 岁的老师傅用一天时间完成一件旗袍的初版，讲述慢工与手感。</p>
+            <div class="dm-vmeta"><span class="dm-author">林砚</span><span>18.2 万播放</span></div>
+          </div>
+        </article>
+        <article class="dm-mini">
+          <div class="dm-mini-art">
+            <svg viewBox="0 0 100 100" role="img" aria-label="影片《一间书店的十年》缩略图：木质书架与阅读灯光">
+              <rect width="100" height="100" fill="#232b33"/>
+              <rect x="14" y="20" width="72" height="60" rx="4" fill="#31404b"/>
+              <rect x="22" y="28" width="20" height="44" rx="2" fill="#5c707c"/>
+              <rect x="46" y="28" width="14" height="44" rx="2" fill="#7a8f99"/>
+              <rect x="64" y="28" width="14" height="44" rx="2" fill="#ffb648" opacity=".8"/>
+              <circle cx="50" cy="82" r="7" fill="#ffe3b3" opacity=".8"/>
+            </svg>
+          </div>
+          <div class="dm-mini-txt">
+            <h4>一间书店的十年：我们如何留住读者</h4>
+            <p>书店主理人与豆麻传媒视频对谈，聊选品、聊空间、聊十年里那些傍晚六点的常客。</p>
+            <div class="dm-vmeta"><span class="dm-author">周予</span><span>15.7 万播放</span></div>
+          </div>
+        </article>
+        <article class="dm-mini">
+          <div class="dm-mini-art">
+            <svg viewBox="0 0 100 100" role="img" aria-label="影片《下班后的城市骑行》缩略图：黄昏公路与自行车剪影">
+              <rect width="100" height="100" fill="#2c2333"/>
+              <circle cx="72" cy="26" r="14" fill="#ffb648" opacity=".7"/>
+              <path d="M0 74h100v26H0z" fill="#1b1622"/>
+              <circle cx="34" cy="70" r="10" fill="none" stroke="#5fe0c0" stroke-width="3"/>
+              <circle cx="66" cy="70" r="10" fill="none" stroke="#5fe0c0" stroke-width="3"/>
+              <path d="M34 70l12-16h14l6 16" stroke="#e7ebf4" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+          <div class="dm-mini-txt">
+            <h4>下班后的城市骑行：夜风里的 23 公里</h4>
+            <p>三位普通上班族的下班路线纪录，用骑行丈量城市，也丈量自己的疲惫与松弛。</p>
+            <div class="dm-vmeta"><span class="dm-author">阿澈</span><span>11.4 万播放</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S3 视频社区列表 ===== -->
+<section class="dm-section" id="dm-videos">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>热门视频流 · <em>豆麻传媒视频</em>社区精选</h2>
+        <p>以下条目来自平台原创与社区投稿，按近 7 天综合热度排序。点击点赞、收藏可直接参与互动，分享按钮可复制影片链接。</p>
+      </div>
+      <span class="dm-sec-index">STREAM 03</span>
+    </div>
+
+    <div class="dm-vlist">
+      <article class="dm-vitem">
+        <div class="dm-vitem-main">
+          <h3>豆麻传媒视频年度巨制《三十六行》第一集：打铁的人</h3>
+          <p>铁花四溅的夜晚，老师傅把一块废铁锻成一把菜刀。镜头记录温度、声音与重复的锤击，讲述一门手艺如何被时间保留下来。</p>
+          <div class="dm-vmeta">
+            <span class="dm-tag">人文纪录</span><span class="dm-tag">原创</span>
+            <span class="dm-author">豆麻纪录组</span><span>58.3 万播放</span><span>2.4 万点赞</span><span>收藏 8612</span>
+          </div>
+        </div>
+        <div class="dm-vactions">
+          <div class="dm-act-row">
+            <button class="dm-btn-like" type="button" data-like="41200">♡ 点赞</button>
+            <button class="dm-btn-fav" type="button" data-fav="1">♡ 收藏</button>
+          </div>
+          <button class="dm-btn-ghost dm-copy-btn" type="button" data-title="三十六行·打铁的人">复制链接</button>
+        </div>
+      </article>
+
+      <article class="dm-vitem">
+        <div class="dm-vitem-main">
+          <h3>教程干货｜一支手机也能拍出有呼吸感的城市短片</h3>
+          <p>从取景构图、手持稳定到色彩调整，豆麻传媒视频摄影组用 8 个实拍案例拆解手机短片的关键动作，附带布光示意图与剪辑节奏表。</p>
+          <div class="dm-vmeta">
+            <span class="dm-tag">教程</span><span class="dm-tag">实用技巧</span>
+            <span class="dm-author">摄影组·老麦</span><span>33.9 万播放</span><span>1.5 万点赞</span><span>收藏 1.2 万</span>
+          </div>
+        </div>
+        <div class="dm-vactions">
+          <div class="dm-act-row">
+            <button class="dm-btn-like" type="button" data-like="26400">♡ 点赞</button>
+            <button class="dm-btn-fav" type="button" data-fav="2">♡ 收藏</button>
+          </div>
+          <button class="dm-btn-ghost dm-copy-btn" type="button" data-title="手机城市短片教程">复制链接</button>
+        </div>
+      </article>
+
+      <article class="dm-vitem">
+        <div class="dm-vitem-main">
+          <h3>人物访谈｜在菜市场画了十年速写的人</h3>
+          <p>插画师每天清晨坐在同一个摊位旁画速写，十年积累了两千多张画。她说菜市场是最诚实的展厅，豆麻传媒视频跟拍了她完整的一天。</p>
+          <div class="dm-vmeta">
+            <span class="dm-tag">人物访谈</span><span class="dm-tag">艺术美学</span>
+            <span class="dm-author">周予</span><span>27.5 万播放</span><span>9860 点赞</span><span>收藏 6310</span>
+          </div>
+        </div>
+        <div class="dm-vactions">
+          <div class="dm-act-row">
+            <button class="dm-btn-like" type="button" data-like="19300">♡ 点赞</button>
+            <button class="dm-btn-fav" type="button" data-fav="3">♡ 收藏</button>
+          </div>
+          <button class="dm-btn-ghost dm-copy-btn" type="button" data-title="菜市场速写十年">复制链接</button>
+        </div>
+      </article>
+
+      <article class="dm-vitem">
+        <div class="dm-vitem-main">
+          <h3>深度测评｜五款入门录音设备实录对比，哪一款适合纪录片</h3>
+          <p>豆麻传媒视频技术组在同一条街道、同一时间段用五款设备录制，保留原始音频不做降噪，给出真实使用结论与预算建议。</p>
+          <div class="dm-vmeta">
+            <span class="dm-tag">深度测评</span><span class="dm-tag">设备</span>
+            <span class="dm-author">技术组·程放</span><span>21.8 万播放</span><span>7420 点赞</span><span>收藏 9120</span>
+          </div>
+        </div>
+        <div class="dm-vactions">
+          <div class="dm-act-row">
+            <button class="dm-btn-like" type="button" data-like="15800">♡ 点赞</button>
+            <button class="dm-btn-fav" type="button" data-fav="4">♡ 收藏</button>
+          </div>
+          <button class="dm-btn-ghost dm-copy-btn" type="button" data-title="入门录音设备测评">复制链接</button>
+        </div>
+      </article>
+
+      <article class="dm-vitem">
+        <div class="dm-vitem-main">
+          <h3>治愈影像｜雨天在家做一顿慢饭</h3>
+          <p>社区投稿作品。窗外下雨，厨房里煮汤，镜头安静地记录切菜声与水沸声，没有旁白，只有生活本身的节奏。</p>
+          <div class="dm-vmeta">
+            <span class="dm-tag">生活方式</span><span class="dm-tag">社区投稿</span>
+            <span class="dm-author">苏小满</span><span>19.6 万播放</span><span>1.1 万点赞</span><span>收藏 5340</span>
+          </div>
+        </div>
+        <div class="dm-vactions">
+          <div class="dm-act-row">
+            <button class="dm-btn-like" type="button" data-like="13700">♡ 点赞</button>
+            <button class="dm-btn-fav" type="button" data-fav="5">♡ 收藏</button>
+          </div>
+          <button class="dm-btn-ghost dm-copy-btn" type="button" data-title="雨天慢饭纪录">复制链接</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S4 专题企划 ===== -->
+<section class="dm-section" id="dm-topics">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>专题企划 · <em>豆麻传媒视频</em>长线内容计划</h2>
+        <p>三个正在更新的长线专题，每个专题包含固定栏目、投稿通道与阶段成果。专题进度与企业动态同步公开，欢迎创作者报名参与。</p>
+      </div>
+      <span class="dm-sec-index">SERIES 04</span>
+    </div>
+
+    <div class="dm-topic-grid">
+      <article class="dm-topic">
+        <div class="dm-topic-top">
+          <h3>城市影像志</h3>
+          <span class="dm-status">更新中 · 第 6 集</span>
+        </div>
+        <svg viewBox="0 0 360 203" role="img" aria-label="专题《城市影像志》配图：密集街区屋顶与远处的塔楼剪影">
+          <rect width="360" height="203" fill="#1a2330"/>
+          <g fill="#26364a">
+            <rect x="16" y="96" width="52" height="107"/><rect x="76" y="72" width="44" height="131"/>
+            <rect x="128" y="110" width="60" height="93"/><rect x="196" y="84" width="48" height="119"/>
+            <rect x="252" y="116" width="42" height="87"/><rect x="302" y="90" width="44" height="113"/>
+          </g>
+          <g fill="#ffb648" opacity=".7">
+            <rect x="26" y="108" width="7" height="7"/><rect x="44" y="126" width="7" height="7"/>
+            <rect x="86" y="88" width="7" height="7"/><rect x="104" y="112" width="7" height="7"/>
+            <rect x="208" y="98" width="7" height="7"/><rect x="226" y="124" width="7" height="7"/>
+            <rect x="312" y="104" width="7" height="7"/>
+          </g>
+          <path d="M170 84V40h10v44" stroke="#5fe0c0" stroke-width="3" fill="none"/>
+          <circle cx="175" cy="34" r="6" fill="#5fe0c0"/>
+        </svg>
+        <p>连续三年记录同一批街区的四季变化：招牌更换、店铺开关、居民迁入迁出。我们想留下可被回看的城市切片，而不是旅游宣传片。</p>
+        <ul>
+          <li>第六集《凌晨四点的豆麻街》已上线，播放 42.6 万</li>
+          <li>第七集招募同城拍摄志愿者 12 名，报名截止 12 月 8 日</li>
+          <li>专题累计归档影像素材 210 小时，全部高清保存</li>
+        </ul>
+      </article>
+
+      <article class="dm-topic">
+        <div class="dm-topic-top">
+          <h3>三十六行</h3>
+          <span class="dm-status">更新中 · 第 3 集</span>
+        </div>
+        <svg viewBox="0 0 360 203" role="img" aria-label="专题《三十六行》配图：工作台上的工具与锤子剪影">
+          <rect width="360" height="203" fill="#2a2420"/>
+          <rect x="0" y="140" width="360" height="63" fill="#3a3028"/>
+          <rect x="40" y="128" width="180" height="12" rx="4" fill="#6b5641"/>
+          <path d="M78 128V70h18v58z" fill="#8a6f52"/>
+          <rect x="60" y="52" width="56" height="20" rx="5" fill="#c9b48a"/>
+          <path d="M170 128l26-86 14 4-26 82z" fill="#a99170"/>
+          <circle cx="272" cy="96" r="36" fill="none" stroke="#ffb648" stroke-width="4"/>
+          <circle cx="272" cy="96" r="12" fill="#ffb648" opacity=".6"/>
+          <path d="M0 190c60-16 120-16 180 0s120 16 180 0" stroke="#5fe0c0" stroke-width="2" fill="none" opacity=".5"/>
+        </svg>
+        <p>寻找正在消失的手艺与正在生长的新行当，每集跟拍一位从业者，完整记录从开工到收工的一天，不剪辑掉疲惫的部分。</p>
+        <ul>
+          <li>第三集《打铁的人》上线 5 天播放破 58 万</li>
+          <li>第四集《修表的人》已完成拍摄，进入后期</li>
+          <li>与非遗机构合作建立手艺人口述档案 46 份</li>
+        </ul>
+      </article>
+
+      <article class="dm-topic">
+        <div class="dm-topic-top">
+          <h3>一日三餐</h3>
+          <span class="dm-status">招募中 · 第 2 季</span>
+        </div>
+        <svg viewBox="0 0 360 203" role="img" aria-label="专题《一日三餐》配图：餐桌俯视图与汤碗、筷子">
+          <rect width="360" height="203" fill="#2c2a24"/>
+          <rect x="24" y="18" width="312" height="167" rx="10" fill="#4a4136"/>
+          <circle cx="126" cy="98" r="44" fill="#e7d7b3"/>
+          <circle cx="126" cy="98" r="32" fill="#c9a86b"/>
+          <rect x="196" y="56" width="104" height="10" rx="5" fill="#8a6f52"/>
+          <rect x="196" y="82" width="104" height="10" rx="5" fill="#8a6f52"/>
+          <rect x="196" y="108" width="72" height="44" rx="8" fill="#5fe0c0" opacity=".55"/>
+          <path d="M60 156c30-10 60-10 90 0" stroke="#ffb648" stroke-width="3" fill="none" opacity=".7"/>
+        </svg>
+        <p>面向社区的开放专题：记录普通家庭的一日三餐。没有滤镜，没有摆盘，只有真实的厨房与真实的疲惫，我们相信日常本身有力量。</p>
+        <ul>
+          <li>第二季开放投稿，已收到社区作品 238 条</li>
+          <li>入选作品将获得官方推荐位与剪辑协助</li>
+          <li>专题衍生企划《菜市场地图》进入筹备阶段</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S5 创作者矩阵 ===== -->
+<section class="dm-section" id="dm-authors">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>创作者矩阵 · <em>豆麻传媒视频</em>的影像伙伴</h2>
+        <p>双列简介展示平台签约与重点合作创作者。每位创作者都经过作品审核与内容规范培训，他们的作品构成豆麻传媒视频的内容基座。</p>
+      </div>
+      <span class="dm-sec-index">CREATORS 05</span>
+    </div>
+
+    <div class="dm-author-grid">
+      <article class="dm-author">
+        <div class="dm-avatar" style="background:linear-gradient(135deg,#ffb648,#ff6b6b)">豆</div>
+        <div class="dm-author-body">
+          <h3>豆麻纪录组 <span class="dm-tag">官方团队</span></h3>
+          <div class="dm-author-nums"><span>作品 <b>186</b></span><span>粉丝 <b>92.4 万</b></span></div>
+          <p>豆麻传媒视频自有纪录团队，擅长长周期跟拍与人物深描。坚持现场收音、拒绝摆拍，作品多次被文化机构收录。团队常驻城市与手艺现场，用镜头换时间。</p>
+          <a class="dm-author-more dm-author-link" href="#dm-authors" data-author="豆麻纪录组">查看创作者档案 →</a>
+        </div>
+      </article>
+
+      <article class="dm-author">
+        <div class="dm-avatar" style="background:linear-gradient(135deg,#5fe0c0,#3a7bd5)">林</div>
+        <div class="dm-author-body">
+          <h3>林砚 <span class="dm-tag">手艺人</span></h3>
+          <div class="dm-author-nums"><span>作品 <b>64</b></span><span>粉丝 <b>31.8 万</b></span></div>
+          <p>专注中国传统服饰与手工技艺记录，拍摄旗袍、盘扣、缂丝等题材。镜头克制、节奏舒缓，习惯用手部特写传递手感。与豆麻传媒视频合作两年，参与《三十六行》系列。</p>
+          <a class="dm-author-more dm-author-link" href="#dm-authors" data-author="林砚">查看创作者档案 →</a>
+        </div>
+      </article>
+
+      <article class="dm-author">
+        <div class="dm-avatar" style="background:linear-gradient(135deg,#ff6b6b,#8a5cf6)">周</div>
+        <div class="dm-author-body">
+          <h3>周予 <span class="dm-tag">访谈主持</span></h3>
+          <div class="dm-author-nums"><span>作品 <b>92</b></span><span>粉丝 <b>46.2 万</b></span></div>
+          <p>人物访谈者，擅长在长对话中捕捉细节。提问不急不逼，愿意等待沉默。主持豆麻传媒视频《一间书店的十年》等对谈，文字功底扎实，常把访谈整理成可读的长文。</p>
+          <a class="dm-author-more dm-author-link" href="#dm-authors" data-author="周予">查看创作者档案 →</a>
+        </div>
+      </article>
+
+      <article class="dm-author">
+        <div class="dm-avatar" style="background:linear-gradient(135deg,#ffd79a,#c9a86b)">苏</div>
+        <div class="dm-author-body">
+          <h3>苏小满 <span class="dm-tag">生活记录</span></h3>
+          <div class="dm-author-nums"><span>作品 <b>118</b></span><span>粉丝 <b>25.6 万</b></span></div>
+          <p>社区成长起来的创作者，拍摄日常饮食与家居收纳。不追求精致构图，更在意真实的声音与光线。她的雨天慢饭系列在社区获得大量共鸣，是豆麻传媒视频社区投稿的代表人物。</p>
+          <a class="dm-author-more dm-author-link" href="#dm-authors" data-author="苏小满">查看创作者档案 →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 用户评价（双列短评） ===== -->
+<section class="dm-section" id="dm-voices">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>用户口碑 · 他们这样评价<em>豆麻传媒视频</em></h2>
+        <p>来自社区、创作者与合作方的真实反馈，覆盖观看体验、投稿流程、合作感受等不同维度，未经修饰。</p>
+      </div>
+      <span class="dm-sec-index">VOICES 06</span>
+    </div>
+
+    <div class="dm-cmt-grid">
+      <article class="dm-cmt">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#ffb648">陈</span>
+          <strong>陈默</strong><span>观众 · 3 天前</span>
+        </div>
+        <p>《凌晨四点的豆麻街》我看了两遍。第一遍看画面，第二遍听声音。早点摊的油锅声、扫帚划过地面的声音，都很清楚，没有过度配乐，这点特别难得。</p>
+      </article>
+
+      <article class="dm-cmt dm-cmt-quote">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#5fe0c0">阿</span>
+          <strong>阿澈</strong><span>创作者 · 1 周前</span>
+        </div>
+        <p>投稿流程比我想的简单。上传后有编辑回信，给了三条很具体的修改建议，还推荐了配乐素材。第一次觉得平台是真的在看作品，而不是只收不收。</p>
+      </article>
+
+      <article class="dm-cmt">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#ff6b6b">李</span>
+          <strong>李工</strong><span>企业合作方 · 2 周前</span>
+        </div>
+        <p>我们请豆麻传媒视频做了一支品牌纪录短片。他们对脚本的修改非常认真，前后三轮沟通，最后成片的质感超出预期，交付时间也准时。</p>
+      </article>
+
+      <article class="dm-cmt">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#8a5cf6">小</span>
+          <strong>小满的邻居</strong><span>观众 · 2 周前</span>
+        </div>
+        <p>喜欢一日三餐专题。看别人认真做饭，自己也会想好好吃饭。希望多拍一点普通家庭，不要总是那种特别漂亮的厨房。</p>
+      </article>
+
+      <article class="dm-cmt">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#ffd79a">林</span>
+          <strong>林间</strong><span>编导专业学生 · 3 周前</span>
+        </div>
+        <p>官网上的教程干货区对我帮助很大。布光示意图和剪辑节奏表都很实用，不是空话。希望以后能多一点幕后花絮，想看完整的拍摄流程。</p>
+      </article>
+
+      <article class="dm-cmt">
+        <div class="dm-cmt-head">
+          <span class="dm-cmt-dot" style="background:#3a7bd5">老</span>
+          <strong>老周书店</strong><span>合作机构 · 1 个月前</span>
+        </div>
+        <p>那支书店访谈播出后，店里多了不少年轻读者。豆麻传媒视频的团队很尊重我们的节奏，没有为了效果让我们做不自然的事，这点很感谢。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 企业动态 + 合作伙伴 ===== -->
+<section class="dm-section" id="dm-updates">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>企业动态 · <em>豆麻传媒视频</em>官方发布</h2>
+        <p>品牌资讯、平台更新与合作进展，按时间倒序排列，全部由品牌中心发布，可公开引用。</p>
+      </div>
+      <span class="dm-sec-index">NEWS 07</span>
+    </div>
+
+    <div class="dm-timeline">
+      <div class="dm-tl-item">
+        <div class="dm-tl-date">2026-11-20</div>
+        <div>
+          <h3>《豆麻影像年刊 2026》专题上线</h3>
+          <p>年刊收录本年度 38 部原创短片与 12 篇创作者手记，按城市、人物、生活三个章节编排，官网专题页同步开放阅读与收藏。</p>
+        </div>
+      </div>
+      <div class="dm-tl-item">
+        <div class="dm-tl-date">2026-11-18</div>
+        <div>
+          <h3>创作者扶持计划第二期开放报名</h3>
+          <p>本期新增纪录片、生活记录、手工技艺、城市探索四个赛道，入选创作者可获得拍摄补贴与官方推荐位，报名截止 12 月 8 日。</p>
+        </div>
+      </div>
+      <div class="dm-tl-item">
+        <div class="dm-tl-date">2026-11-15</div>
+        <div>
+          <h3>客户端 4.2 版本更新公告</h3>
+          <p>新增 4K 高清离线下载、收藏夹分组、评论区关键词搜索三项功能，同时优化弱网环境下的播放稳定性。</p>
+        </div>
+      </div>
+      <div class="dm-tl-item">
+        <div class="dm-tl-date">2026-10-30</div>
+        <div>
+          <h3>与本地文化馆达成影像共建合作</h3>
+          <p>双方将共同记录本地民俗与手艺人口述史，首批 6 支短片已进入拍摄阶段，预计 2027 年春季陆续上线。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dm-sec-head" style="margin-top:48px;">
+      <div>
+        <h2>合作品牌与伙伴</h2>
+        <p>豆麻传媒视频与内容机构、文化单位、技术伙伴保持长期合作，共同推动原创影像的标准化与传播。</p>
+      </div>
+      <span class="dm-sec-index">PARTNERS</span>
+    </div>
+    <div class="dm-partner-grid">
+      <div class="dm-partner"><b>城市文化馆</b><span>影像共建单位</span></div>
+      <div class="dm-partner"><b>拾光书店</b><span>内容合作空间</span></div>
+      <div class="dm-partner"><b>南方摄影器材</b><span>设备支持伙伴</span></div>
+      <div class="dm-partner"><b>青禾影像社</b><span>创作者联盟</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 创作灵感 + FAQ ===== -->
+<section class="dm-section" id="dm-faq">
+  <div class="dm-wrap">
+    <div class="dm-sec-head">
+      <div>
+        <h2>创作灵感与<em>豆麻传媒视频</em>常见问题</h2>
+        <p>给正在准备作品的创作者一些可操作的起点，同时解答投稿、版权、合作等高频问题。</p>
+      </div>
+      <span class="dm-sec-index">HELP 08</span>
+    </div>
+
+    <div class="dm-analysis-grid">
+      <div class="dm-faq">
+        <details>
+          <summary>如何向豆麻传媒视频投稿？对设备有要求吗？</summary>
+          <p>官网底部与页头均设投稿合作入口，提交作品名称、时长、简介与原始文件链接即可。设备不限，手机拍摄同样欢迎，但要求画面稳定、声音清楚、素材为本人原创或已获授权。编辑会在 5 个工作日内回复是否进入下一轮。</p>
+        </details>
+        <details>
+          <summary>投稿后版权归谁？平台会二次修改吗？</summary>
+          <p>作品版权归创作者所有，豆麻传媒视频获得在平台及官方账号的展示授权。如需二次剪辑用于专题或宣传，我们会单独沟通并取得书面同意，不会擅自改动创作者署名。</p>
+        </details>
+        <details>
+          <summary>创作者扶持计划的入选标准是什么？</summary>
+          <p>主要看三点：选题是否具体、影像是否完整、是否愿意持续更新。我们不唯粉丝量，社区投稿者与新人也同样可以报名。入选后会安排一对一沟通，明确阶段目标与支持内容。</p>
+        </details>
+        <details>
+          <summary>平台上的视频可以下载用于教学或剪辑练习吗？</summary>
+          <p>标注“原创”的作品仅开放观看与分享链接，不提供下载。用于课堂教学等非商业场景，可通过投稿入口提交申请，说明用途与范围，我们会根据情况提供授权说明。</p>
+        </details>
+        <details>
+          <summary>企业或品牌方如何与豆麻传媒视频合作？</summary>
+          <p>可通过页头“投稿合作”按钮提交需求，说明项目背景、内容形式、时间与预算范围。我们承接品牌纪录短片、人物访谈、专题共建等形式，不接纯硬广植入，以确保内容品质与观众信任。</p>
+        </details>
+        <details>
+          <summary>为什么有些早期作品画质不高但仍然保留？</summary>
+          <p>旧片是品牌成长的记录，我们坚持不删旧片、不改数据。早期作品会标注拍摄年份与技术条件，方便观众理解当时的制作环境，这也是豆麻传媒视频品牌故事的一部分。</p>
+        </details>
+      </div>
+
+      <aside class="dm-analysis-aside">
+        <h4>创作灵感 · 三个可执行的起点</h4>
+        <div class="dm-kv"><span>选题一</span><b>记录一条街的早晨</b></div>
+        <p class="dm-note">选一条你熟悉的街，连续三个早晨在同一位置拍摄 90 秒，剪成一支 3 分钟的观察短片，重点保留环境声。</p>
+        <div class="dm-kv"><span>选题二</span><b>拍一位手艺人的手</b></div>
+        <p class="dm-note">不拍脸，只拍手。用手部动作讲述一个人的职业与性格，配一段现场采访的同期声，时长控制在 5 分钟内。</p>
+        <div class="dm-kv"><span>选题三</span><b>你家的一日三餐</b></div>
+        <p class="dm-note">用固定机位记录一天三顿饭的准备过程，不摆盘不滤镜，剪辑时保留一次失败或意外的片段。</p>
+        <p class="dm-note">以上选题均可直接投稿至豆麻传媒视频社区，入选作品将获得官方推荐与剪辑建议。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== S8 页脚 ===== -->
+<footer class="dm-footer">
+  <div class="dm-wrap">
+    <div class="dm-footer-grid">
+      <div>
+        <h4>豆麻传媒视频 · 官方网站</h4>
+        <p>豆麻传媒视频是一家以原创影像为核心的传媒品牌，持续运营城市纪录、人物访谈与生活观察三条内容线，为创作者与企业搭建高清正版的内容生态。我们坚持真实、温暖、有力量的影像表达，做值得信赖的视频品牌门户。</p>
+        <div class="dm-footer-share">
+          <button type="button" id="dmShareBtn">分享本页</button>
+          <button type="button" id="dmReportBtn">问题反馈</button>
+        </div>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#dm-focus">本周焦点</a></li>
+          <li><a href="#dm-videos">热门视频流</a></li>
+          <li><a href="#dm-topics">专题企划</a></li>
+          <li><a href="#dm-authors">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>品牌信息</h4>
+        <ul>
+          <li><a href="#dm-about">品牌简介</a></li>
+          <li><a href="#dm-analysis">关键词解析</a></li>
+          <li><a href="#dm-updates">企业动态</a></li>
+          <li><a href="#dm-faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li>投稿邮箱：submit@douma-media.example</li>
+          <li>合作咨询：bd@douma-media.example</li>
+          <li>工作时间：周一至周五 10:00–18:00</li>
+          <li>创作者扶持计划持续报名中</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dm-footer-bottom">
+      <span>© 2026 豆麻传媒视频 版权所有 · 持续运营中</span>
+      <span>豆麻传媒视频官方网站 · 备案号示例：影字第 2026-0420 号 · 内容均标注原创或授权来源</span>
+    </div>
+  </div>
+</footer>
+
+<button class="dm-top" id="dmTopBtn" type="button" aria-label="回到顶部">↑</button>
+<div class="dm-toast" id="dmToast" role="status" aria-live="polite"></div>
+
+<div class="dm-modal" id="dmModal" role="dialog" aria-modal="true" aria-labelledby="dmModalTitle">
+  <div class="dm-modal-card">
+    <button class="dm-modal-close" id="dmModalClose" type="button" aria-label="关闭弹窗">×</button>
+    <h3 id="dmModalTitle">投稿合作</h3>
+    <p id="dmModalDesc">请留下你的作品或合作意向，豆麻传媒视频编辑会在 5 个工作日内回复。</p>
+    <textarea id="dmModalText" placeholder="作品名称 / 时长 / 简介，或合作需求说明……"></textarea>
+    <div class="dm-modal-actions">
+      <button class="dm-btn-ghost" id="dmModalCancel" type="button">取消</button>
+      <button class="dm-btn-primary" id="dmModalSend" type="button">提交</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var burger = document.getElementById('dmBurger');
+  var nav = document.getElementById('dmNav');
+  if (burger && nav) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('dmToast');
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-on'); }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var search = document.getElementById('dmSearch');
+  var tip = document.getElementById('dmSearchTip');
+  var searchIndex = [
+    '凌晨四点的豆麻街', '打铁的人', '手机城市短片教程', '菜市场速写',
+    '入门录音设备测评', '雨天慢饭', '城市影像志', '三十六行', '一日三餐',
+    '豆麻纪录组', '林砚', '周予', '苏小满'
+  ];
+  if (search && tip) {
+    search.addEventListener('input', function(){
+      var kw = search.value.trim();
+      if (!kw) { tip.classList.remove('is-on'); tip.textContent = ''; return; }
+      var hits = searchIndex.filter(function(s){ return s.indexOf(kw) > -1; });
+      if (hits.length) {
+        tip.textContent = '找到 ' + hits.length + ' 条相关内容：' + hits.slice(0,3).join('、');
+      } else {
+        tip.textContent = '暂无匹配，可尝试“城市”“纪录”“教程”“创作者”';
+      }
+      tip.classList.add('is-on');
+    });
+    search.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        var kw = search.value.trim();
+        showToast(kw ? '已提交搜索：' + kw : '请输入关键词后再搜索');
+      }
+    });
+    search.addEventListener('blur', function(){
+      setTimeout(function(){ tip.classList.remove('is-on'); }, 1600);
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 切换 ---------- */
+  document.querySelectorAll('.dm-btn-like').forEach(function(btn){
+    var base = parseInt(btn.getAttribute('data-like'), 10) || 0;
+    var liked = false;
+    btn.addEventListener('click', function(){
+      liked = !liked;
+      var n = liked ? base + 1 : base;
+      btn.classList.toggle('is-liked', liked);
+      btn.textContent = (liked ? '♥ 已赞 ' : '♡ 点赞 ') + n.toLocaleString('zh-CN');
+      showToast(liked ? '已为这条作品点赞' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('.dm-btn-fav').forEach(function(btn){
+    var faved = false;
+    btn.addEventListener('click', function(){
+      faved = !faved;
+      btn.classList.toggle('is-faved', faved);
+      btn.textContent = faved ? '♥ 已收藏' : '♡ 收藏';
+      showToast(faved ? '已加入收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 复制链接 ---------- */
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('影片链接已复制');
+      }).catch(function(){
+        showToast('复制失败，请手动选择地址');
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast('影片链接已复制'); }
+      catch(err){ showToast('复制失败，请手动复制'); }
+      document.body.removeChild(ta);
+    }
+  }
+  document.querySelectorAll('.dm-copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.getAttribute('data-title') || '豆麻传媒视频';
+      copyText('豆麻传媒视频 · ' + t + ' https://douma-media.example/video/' + encodeURIComponent(t));
+    });
+  });
+  var shareBtn = document.getElementById('dmShareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function(){
+      copyText('豆麻传媒视频官方网站 https://douma-media.example');
+    });
+  }
+
+  /* ---------- 作者信息弹窗 ---------- */
+  var modal = document.getElementById('dmModal');
+  var modalTitle = document.getElementById('dmModalTitle');
+  var modalDesc = document.getElementById('dmModalDesc');
+  var modalText = document.getElementById('dmModalText');
+  var modalSend = document.getElementById('dmModalSend');
+  var modalMode = 'submit';
+
+  function openModal(title, desc, mode, placeholder){
+    if (!modal) return;
+    modalMode = mode || 'submit';
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalText.value = '';
+    modalText.placeholder = placeholder || '';
+    modalText.style.display = (mode === 'info') ? 'none' : '';
+    modalSend.textContent = (mode === 'info') ? '知道了' : '提交';
+    modal.classList.add('is-on');
+    if (mode !== 'info') { modalText.focus(); }
+  }
+  function closeModal(){ if (modal) modal.classList.remove('is-on'); }
+
+  var authorInfo = {
+    '豆麻纪录组': { desc: '豆麻传媒视频自有纪录团队，作品 186 部，粉丝 92.4 万。擅长长周期跟拍与人物深描，坚持现场收音与真实记录，代表作《城市影像志》《三十六行》。' },
+    '林砚': { desc: '手工艺影像创作者，作品 64 部，粉丝 31.8 万。专注传统服饰与手工技艺题材，镜头克制，注重手感与细节，与平台合作参与《三十六行》系列。' },
+    '周予': { desc: '人物访谈主持与撰稿人，作品 92 部，粉丝 46.2 万。擅长长对话与细节捕捉，主持《一间书店的十年》等对谈，文字作品常在官网专题页发布。' },
+    '苏小满': { desc: '生活记录创作者，作品 118 部，粉丝 25.6 万。从社区投稿成长，拍摄日常饮食与家居收纳，强调真实声音与自然光线，代表作《雨天慢饭》。' }
+  };
+  document.querySelectorAll('.dm-author-link').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var name = link.getAttribute('data-author');
+      var info = authorInfo[name];
+      openModal(name + ' · 创作者档案', info ? info.desc : '创作者档案整理中。', 'info');
+    });
+  });
+
+  var submitBtn = document.getElementById('dmSubmitBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function(){
+      openModal('投稿合作', '请留下作品信息或合作需求，豆麻传媒视频编辑会在 5 个工作日内回复。', 'submit', '作品名称 / 时长 / 简介，或合作需求说明……');
+    });
+  }
+  var reportBtn = document.getElementById('dmReportBtn');
+  if (reportBtn) {
+    reportBtn.addEventListener('click', function(){
+      openModal('问题反馈', '如发现内容异常、版权问题或页面故障，请在此说明，我们会尽快核实处理。', 'submit', '请描述你遇到的问题……');
+    });
+  }
+
+  var modalClose = document.getElementById('dmModalClose');
+  var modalCancel = document.getElementById('dmModalCancel');
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalCancel) modalCancel.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', function(e){
+      if (e.target === modal) closeModal();
+    });
+  }
+  if (modalSend) {
+    modalSend.addEventListener('click', function(){
+      if (modalMode === 'info') { closeModal(); return; }
+      var val = modalText.value.trim();
+      if (val.length < 4) {
+        showToast('请补充至少 4 个字的内容');
+        modalText.focus();
+        return;
+      }
+      closeModal();
+      showToast('已提交，感谢你的参与');
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('dmTopBtn');
+  if (topBtn) {
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 620) topBtn.classList.add('is-on');
+      else topBtn.classList.remove('is-on');
+    }, { passive: true });
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+</body>
+  </html>
